@@ -1,13 +1,13 @@
 import {ButtonHTMLAttributes, FC, ReactNode} from 'react';
 
     type ButtonProps={
-        className: string;
+        className?: string;
         children: ReactNode;
     } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<ButtonProps> =({className, children, ...rest}) =>{
   return (
-    <button {...rest} className={'bg-white px-3 py-2 rounded-md font-semibold mt-8 ' + " "+ className}>
+    <button {...rest} className={'bg-white px-3 py-2 rounded-md font-semibold mt-8 text-teal-300 hover:text-teal-500	' + " "+ className}>
       {children}
     </button>
   )
