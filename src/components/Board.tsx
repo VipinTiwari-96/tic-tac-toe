@@ -11,7 +11,7 @@ const Board: FC<BoardProps> =({players}) =>{
     const[square,  setSquare]= useState(Array(9).fill(null));
     const[isXturn,  setIsXturn]= useState(true);
 
-    //getting id from Square component
+    //getting id from Square component to that is clicked
     const handleClick=(id: number)=>{
         const copySquare= [...square];
         if(copySquare[id] == null){
@@ -25,7 +25,7 @@ const Board: FC<BoardProps> =({players}) =>{
         setIsXturn(true)
     }
 
-//condition for winner/draw
+//condition for winner
   const conditions=[
         [0,1,2],
         [3,4,5],
@@ -90,7 +90,7 @@ const Board: FC<BoardProps> =({players}) =>{
    <h3 className={' text-xl' + " " +  playerXtheme}>{players.playerA}</h3>
    <h3 className={' text-xl' + " " + playerOtheme}>{players.playerB}</h3>
 </div>
-    <div className='    flex flex-wrap pt-8 '>
+    <div className='flex flex-wrap pt-8 '>
       { square.map((itm,i)=> <Square item={itm} key={i} id={i} handleClick={handleClick} />)}
     </div></>}
   </div>}
